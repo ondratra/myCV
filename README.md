@@ -4,6 +4,7 @@
 
 Static webpage for your CV. It can be deployed on webserver or shared as static files in an email, on an USB stick, etc.
 Visit [ondratra.eu](https://ondratra.eu) to see how this CV might look like.
+It is created using only HTML, JavaScript and CSS, thus can be easily edited without any compilation needed.
 
 ## Create your own CV
 
@@ -14,6 +15,6 @@ Visit [ondratra.eu](https://ondratra.eu) to see how this CV might look like.
 
 ## Optional
 - You can change colors by changing values in `colorScheme.css`.
-- Edit variable `boxes` in `scripts.js` to hide or edit information boxes of your CV. 
+- Edit variable `boxes` in `scripts.js` to hide or edit information boxes of your CV.
   In the same file you can change all icons by setting different Font Awesome classes `settings` variable.
   For list of Font Awesome icons' classes visit [fontawesome.com/icons](https://fontawesome.com/icons).
