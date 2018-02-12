@@ -1,0 +1,268 @@
+@font-face {
+    font-family: 'myCvFont';
+    font-style: normal;
+    font-weight: 400;
+    src: url("3rdParty/font/Nunito-Regular.ttf");
+}
+
+
+html, body {
+    font-family: 'myCvFont';
+}
+
+.clear {
+    clear: both;
+}
+
+.omniContainer {
+    width: 1000px;
+    padding: 15px 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.omniContainer a {
+    text-decoration: underline;
+    color: #5e4b8b; /* color3 */
+}
+
+
+.leftColumn {
+    position: fixed;
+    width: 230px;
+    float: left;
+    padding-right: 20px;
+    text-align: center;
+}
+
+.rightColumn {
+    width: 710px;
+    margin-left: 270px;
+    float: left;
+    clear: right;
+}
+
+
+
+
+
+
+
+
+.infoBox {
+    transition: all 450ms cubic-bezier(0.22, 1, 0.30, 1) 0ms;
+    box-sizing: border-box;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.15);
+    border-radius: 2px;
+    margin-bottom: 24px;
+    display: block;
+    padding: 8px 24px 18px 24px;
+}
+
+.infoBox .iconAnchor {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 24px;
+    vertical-align: middle;
+    margin-left: 4px;
+}
+
+.infoBox .title {
+    display: inline-block;
+    height: 56px;
+    line-height: 56px;
+    margin-bottom: 5px;
+}
+
+.infoBox .professionItem {
+    border-radius: 20px;
+    height: 32px;
+    line-height: 32px;
+    
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 8px;
+
+    font-size: 14px;
+}
+
+.infoBox .professionItem .duration {
+    border-radius: 20px;
+    width: 60px;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.infoBox .professionItem .name {
+    padding-left: 4px;
+    padding-right: 14px;
+    display: inline-block;
+
+}
+
+
+
+.infoBox .iconText {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+    float: left;
+    font-size: 14px;
+}
+
+.infoBox .knowledgeItem .name {
+    display: inline-block;
+}
+
+.infoBox .knowledgeItem .levelDescription {
+    display: inline-block;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.infoBox .knowledgeItem .slider {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    margin: 8px 0px;
+}
+
+.infoBox .knowledgeItem .slider .line {
+    height: 4px;
+}
+
+.infoBox .knowledgeItem .slider .dotOuter {
+    position: absolute;
+    top: -4px;
+    height: 16px;
+    width: 16px;
+}
+
+.infoBox .knowledgeItem .slider .dotInner {
+    position: relative;
+    top: 1px;
+    left: 3px;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+}
+
+.infoBox .rightContent {
+    margin-left: 60px;
+}
+
+.infoBox .knowledgeItem {
+    width: 49%;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.infoBox .knowledgeItem .iconText {
+    float: none;
+}
+
+.infoBox .knowledgeItem .skillContent {
+    display: inline-block;
+    width: 240px;
+    margin-left: 14px;
+    vertical-align: top;
+}
+
+
+.infoBox .hobbyItem {
+    border-radius: 20px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    padding: 0px 14px;
+    margin-bottom: 8px;
+}
+
+
+.infoBox .projectItem,
+.infoBox .workExperienceItem {
+    margin-bottom: 40px;
+}
+
+.infoBox .projectItem .name,
+.infoBox .workExperienceItem .name {
+    font-size: 20px;
+}
+
+.infoBox .workExperienceItem .name,
+.infoBox .workExperienceItem .duration {
+    display: inline-block;
+}
+
+.infoBox .workExperienceItem .duration {
+    font-size: 16px;
+    color: #aaa;
+}
+
+
+
+.profile {
+    color: #777;
+}
+
+.profile .personalImageContainer {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.15);
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+.profile .personalImageContainer img {
+    width: 100%;
+    border-radius: 50%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    display: block;
+    opacity: 1;
+}
+
+
+.profile .name {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.profile .location {
+    margin-top: 10px;
+}
+
+.profile .location .iconAnchor {
+    margin-right: 4px;
+    font-size: 18px;
+}
+
+.profile .location .iconAnchor,
+.profile .location .text {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.profile .motto {
+    margin-top: 20px;
+    padding: 0px 20px;
+    font-size: 15px;
+}
+
+.profile .email {
+    margin-top: 20px;
+}
