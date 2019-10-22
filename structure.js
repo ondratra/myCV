@@ -84,7 +84,7 @@
         emailLink.textContent = email;
 
         // socials
-        let socialsContainer = container.querySelector('.socials');
+        let socialsContainer = container.querySelector('.anchorSocials');
         let socialsString = socials.forEach((item) => {
             let link = document.createElement('a');
             link.href = item[1];

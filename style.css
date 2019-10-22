@@ -78,7 +78,7 @@ html, body {
     border-radius: 20px;
     height: 32px;
     line-height: 32px;
-    
+
     display: inline-block;
     margin-right: 10px;
     margin-bottom: 8px;
@@ -265,4 +265,8 @@ html, body {
 
 .profile .email {
     margin-top: 20px;
+}
+
+.profile .anchorSocials a {
+    display: block;
 }
