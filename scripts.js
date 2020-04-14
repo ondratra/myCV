@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
             skills: 'fas fa-cogs',
             languages: 'fas fa-globe',
             workExperience: 'fas fa-briefcase',
-            projects: 'far fa-object-group',
+            mentionableProjects: 'far fa-object-group',
             hobbies: 'fas fa-basketball-ball',
             books: 'fas fa-book'
         }
@@ -22,10 +22,10 @@ document.addEventListener("DOMContentLoaded", function() {
     let boxes = [
         ['About me', myCv.createAboutMeContent(dataset.freeText.aboutMe)],
         ['Professions', myCv.createProfessionsContent(dataset.professionsI, dataset.professionsII)],
+        ['Mentionable projects', myCv.createProjectsBox(dataset.projects)],
+        ['Work Experience', myCv.createWorkExperienceBox(dataset.workExperiences)],
         ['Skills', myCv.createSkillsContent(dataset.skills, dataset.knowledgeLevelDescriptions)],
         ['Languages', myCv.createLanguagesContent(dataset.languages, dataset.languageLevelDescriptions)],
-        ['Work Experience', myCv.createWorkExperienceBox(dataset.workExperiences)],
-        ['Projects', myCv.createProjectsBox(dataset.projects)],
         ['Hobbies', myCv.createHobbiesBox(dataset.hobbies, dataset.books, 'Books', settings.icons.books)]
     ];
 
