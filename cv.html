@@ -18,11 +18,10 @@
         <script src="3rdParty/fontAwesome/fa-regular.min.js"></script>
         <script src="3rdParty/fontAwesome/fa-solid.min.js"></script>
 
-
-        <!-- Scripts -->
-        <script src="data/dataset.js"></script>
-        <script src="structure.js"></script>
-        <script src="scripts.js"></script>
+        <!-- Resource preloads -->
+        <link rel="preload" href="data/dataset.js" as="script" />
+        <link rel="preload" href="structure.js" as="script" />
+        <link rel="preload" href="scripts.js" as="script" />
     </head>
     <body class="backgroundColor1">
         <div class="omniContainer">
@@ -224,5 +223,10 @@
             </div>
 
         </div>
+
+        <!-- Scripts -->
+        <script src="data/dataset.js" defer></script>
+        <script src="structure.js" defer></script>
+        <script src="scripts.js" defer></script>
     </body>
 </html>
