@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+    /////////////////// setup data /////////////////////////////////////////////
     let settings = {
         icons: {
             /* font awesome icons */
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
         ['Hobbies', myCv.createHobbiesBox(dataset.hobbies, dataset.books, 'Books', settings.icons.books)]
     ];
 
+    // display CV content
     myCv.initPage(dataset.webPageTitle);
     myCv.initProfile(settings.icons.location, dataset.name, dataset.portrait, dataset.contacts.location, dataset.freeText.motto, dataset.contacts.email, dataset.contacts.socials);
     myCv.initStructure(boxes, settings.icons);

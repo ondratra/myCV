@@ -114,7 +114,6 @@
         let anchorProfessionsI = instance.querySelector('.anchorProfessionsI');
         for (let i = 0; i < professionsI.length; i++) {
             let tmp = createProfessionItem.apply(null, professionsI[i]);
-            console.log(tmp);
             anchorProfessionsI.appendChild(tmp);
         }
 
@@ -205,19 +204,34 @@
         let anchor = instance.querySelector('.anchorProjects');
 
         for (let i = 0; i < projects.length; i++) {
-            let tmp = createProjectItem.apply(null, projects[i].concat([i]));
+            let tmp = createProjectItem.apply(null, [i].concat(projects[i]));
             anchor.appendChild(tmp);
         }
 
         return instance;
     }
 
-    function createProjectItem(name, url, description, itemIndex) {
+    function createProjectItem(itemIndex, name, url, description, technologyUsed, notableMetrics) {
         let instance = cloneTemplateContent('#templateProjectItem');
 
         createTitleLink(instance.querySelector('.name'), name, url);
         instance.querySelector('.iconText').textContent = '#' + (itemIndex + 1);
         instance.querySelector('.description').textContent = description;
+
+        const conditionalContent = (selectorContainer, selectorContent, text) => {
+            const container = instance.querySelector(selectorContainer)
+            if (!text) {
+                container.style.display = 'none'
+                return
+            }
+
+            container.style.display = 'block' // ideally change to `revert` after this future is supported https://caniuse.com/#search=revert
+            container.querySelector(selectorContent).textContent = text
+        }
+
+        conditionalContent('.technologyUsed', '.content', technologyUsed)
+        conditionalContent('.notableMetrics', '.content', notableMetrics)
+
         return instance;
     }
 

@@ -1,31 +1,41 @@
+:root {
+    --color-primary: #fff;
+    --color-secondary: #000;
+    --color-tertiary: #5e4b8b;
+    --color-quaternary: #aaa;
+    --color-quinary: #eee;
+    --color-senary: #f2f2f2;
+    --color-septenary: #777;
+}
+
 .backgroundColor1 {
-    background-color: #eee;
+    background-color: var(--color-quinary);
 }
 
 .backgroundColor2 {
-    background-color: #fff;
+    background-color: var(--color-primary);
 }
 
 .backgroundColor3 {
-    background-color: #f2f2f2;
+    background-color: var(--color-senary);
 }
 
 .backgroundColor4 {
-    background-color: #5e4b8b;
+    background-color: var(--color-tertiary);
 }
 
 .color1 {
-    color: #fff;
+    color: var(--color-primary);
 }
 
 .color2 {
-     color: #000;
+     color: var(--color-secondary);
 }
 
 .color3 {
-    color: #5e4b8b;
+    color: var(--color-tertiary);
 }
 
 .color4 {
-    color: #aaa;
+    color: var(--color-quaternary);
 }
