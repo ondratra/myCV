@@ -10,7 +10,7 @@ It is created using only HTML, JavaScript, and CSS, thus it can be easily edited
 
 ## Mandatory steps
 - Fork this repository or simply download all files to your computer
-- Put your profile photography to file `data/portrait.jpg`.
+- Put your profile photography to file `data/portrait.jpg` (or copy `data/portrait.example.svg` to `data/portrait.svg`).
 - Copy file `data/dataset.example.js` to `dataset.js` and fill some information about yourself into it.
 
 ## Optional

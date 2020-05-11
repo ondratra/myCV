@@ -6,6 +6,20 @@
 
         <title class="webPageTitle"></title>
 
+        <!-- Resource preloads -->
+        <link rel="preload" as="script" href="data/dataset.js"/>
+        <link rel="preload" as="script" href="structure.js"/>
+        <link rel="preload" as="script" href="scripts.js"/>
+        <link rel="preload" as="script" href="3rdParty/fontAwesome/fontawesome.min.js" />
+        <link rel="preload" as="script" href="3rdParty/fontAwesome/fa-regular.min.js" />
+        <link rel="preload" as="script" href="3rdParty/fontAwesome/fa-solid.min.js" />
+
+        <link rel="preload" as="style" href="colorScheme.css" />
+        <link rel="preload" as="style" href="style.css" />
+
+        <link rel="preload" as="style" href="3rdParty/fontAwesome/fa-svg-with-js.css" />
+
+        <link rel="preload" as="font" href="3rdParty/font/Nunito-Regular.ttf" crossorigin />
 
         <!-- Styles -->
         <link rel="stylesheet" href="colorScheme.css">
@@ -13,15 +27,6 @@
 
         <!-- Font Awesome -->
         <link rel="stylesheet" href="3rdParty/fontAwesome/fa-svg-with-js.css">
-
-        <script src="3rdParty/fontAwesome/fontawesome.min.js"></script>
-        <script src="3rdParty/fontAwesome/fa-regular.min.js"></script>
-        <script src="3rdParty/fontAwesome/fa-solid.min.js"></script>
-
-        <!-- Resource preloads -->
-        <link rel="preload" href="data/dataset.js" as="script" />
-        <link rel="preload" href="structure.js" as="script" />
-        <link rel="preload" href="scripts.js" as="script" />
     </head>
     <body class="backgroundColor1">
         <div class="omniContainer">
@@ -228,5 +233,9 @@
         <script src="data/dataset.js" defer></script>
         <script src="structure.js" defer></script>
         <script src="scripts.js" defer></script>
+
+        <script src="3rdParty/fontAwesome/fontawesome.min.js" defer></script>
+        <script src="3rdParty/fontAwesome/fa-regular.min.js" defer></script>
+        <script src="3rdParty/fontAwesome/fa-solid.min.js" defer></script>
     </body>
 </html>
