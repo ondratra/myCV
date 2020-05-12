@@ -40,6 +40,7 @@
         title.href = url;
         title.textContent = name;
         title.target = '_blank';
+        title.rel = 'nofollow'
         container.appendChild(title);
     }
 
@@ -90,6 +91,7 @@
             link.href = item[1];
             link.textContent = item[0];
             link.target = '_blank';
+            link.rel = 'nofollow'
 
             return socialsContainer.appendChild(link);
         });
@@ -192,7 +194,7 @@
         instance.querySelector('.iconText').textContent = '#' + (itemIndex + 1);
         instance.querySelector('.yearInterval').textContent = duration;
         instance.querySelector('.position').textContent = position;
-        instance.querySelector('.description').textContent = description;
+        instance.querySelector('.description').innerHTML = description;
 
         return instance;
     }
@@ -216,7 +218,7 @@
 
         createTitleLink(instance.querySelector('.name'), name, url);
         instance.querySelector('.iconText').textContent = '#' + (itemIndex + 1);
-        instance.querySelector('.description').textContent = description;
+        instance.querySelector('.description').innerHTML = description;
 
         const conditionalContent = (selectorContainer, selectorContent, text) => {
             const container = instance.querySelector(selectorContainer)
@@ -224,9 +226,7 @@
                 container.style.display = 'none'
                 return
             }
-
-            container.style.display = 'block' // ideally change to `revert` after this future is supported https://caniuse.com/#search=revert
-            container.querySelector(selectorContent).textContent = text
+            container.querySelector(selectorContent).innerHTML = text
         }
 
         conditionalContent('.technologyUsed', '.content', technologyUsed)
