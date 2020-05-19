@@ -6,6 +6,8 @@ Static webpage for your CV. It can be deployed on a webserver or shared as stati
 Visit [ondratra.eu](https://ondratra.eu) to see how this CV might look like.
 It is created using only HTML, JavaScript, and CSS, thus it can be easily edited without any compilation needed.
 
+To view CV open file `cv.html` in your web browser. You might need to do [mandatory steps](#mandatory-steps) first.
+
 ## Create your own CV
 
 ## Mandatory steps

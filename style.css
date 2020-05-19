@@ -269,3 +269,14 @@ hr {
 .profile .anchorSocials a {
     display: block;
 }
+
+/****************** Fork me ribbon ********************************************/
+.forkMeRibbon {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.forkMeRibbon img {
+    display: block;
+}

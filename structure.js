@@ -268,16 +268,16 @@
 
     /////////////////// Register public functions //////////////////////////////
     window.myCv = {
-        initPage: initPage,
-        initProfile: initProfile,
-        initStructure: initStructure,
+        initPage,
+        initProfile,
+        initStructure,
 
-        createAboutMeContent: createAboutMeContent,
-        createProfessionsContent: createProfessionsContent,
-        createSkillsContent: createSkillsContent,
-        createLanguagesContent: createLanguagesContent,
-        createWorkExperienceBox: createWorkExperienceBox,
-        createProjectsBox: createProjectsBox,
-        createHobbiesBox: createHobbiesBox
+        createAboutMeContent,
+        createProfessionsContent,
+        createSkillsContent,
+        createLanguagesContent,
+        createWorkExperienceBox,
+        createProjectsBox,
+        createHobbiesBox,
     };
 })();
