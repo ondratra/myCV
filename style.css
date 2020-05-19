@@ -270,6 +270,7 @@ hr {
     display: block;
 }
 
+
 /****************** Fork me ribbon ********************************************/
 .forkMeRibbon {
     position: absolute;
@@ -279,4 +280,17 @@ hr {
 
 .forkMeRibbon img {
     display: block;
+}
+
+
+/****************** Print *****************************************************/
+@media print {
+    .forkMeRibbon {
+        display: none;
+    }
+
+    .backgroundColor4 {
+        border: 1px solid var(--color-tertiary);
+        color: var(--color-tertiary);
+    }
 }
