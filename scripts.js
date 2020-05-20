@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     /////////////////// setup data /////////////////////////////////////////////
-    let settings = {
+    const settings = {
         icons: {
             /* font awesome icons */
 
@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    let dataset = window.myCvDataset;
-    let myCv = window.myCv;
+    const dataset = window.myCvDataset;
+    const myCv = window.myCv;
 
-    let boxes = [
+    const boxes = [
         ['About me', myCv.createAboutMeContent(dataset.freeText.aboutMe)],
         ['Professions', myCv.createProfessionsContent(dataset.professionsI, dataset.professionsII)],
         ['Mentionable projects', myCv.createProjectsBox(dataset.projects)],
