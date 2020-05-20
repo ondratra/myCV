@@ -74,6 +74,10 @@ hr {
     margin-bottom: 5px;
 }
 
+.infoBox .aboutMe p:first-child {
+    margin-top: 0px;
+}
+
 .infoBox .professionItem {
     border-radius: 20px;
     height: 32px;

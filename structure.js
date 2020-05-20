@@ -102,7 +102,13 @@
     function createAboutMeContent(aboutMe) {
         let instance = cloneTemplateContent('#templateAboutMe');
 
-        instance.querySelector('.aboutMe').innerHTML = aboutMe;
+        let content = aboutMe
+            .trim()
+            .split('\n\n')
+            .map(item => `<p>${item}</p>`)
+            .join('')
+
+        instance.querySelector('.aboutMe').innerHTML = content;
 
         return instance;
     }
