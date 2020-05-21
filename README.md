@@ -13,10 +13,10 @@ To view CV open file `cv.html` in your web browser. You might need to do [mandat
 ## Mandatory steps
 - Fork this repository or simply download all files to your computer
 - Put your profile photography to file `data/portrait.jpg` (or copy `data/portrait.example.svg` to `data/portrait.svg`).
-- Copy file `data/dataset.example.js` to `dataset.js` and fill some information about yourself into it.
+- Copy file `data/dataset.example.js` to `data/dataset.js` and fill some information about yourself into it.
 
 ## Optional
-- You can change colors by changing values in `colorScheme.css`.
-- Edit variable `boxes` in `scripts.js` to hide or edit information boxes of your CV.
+- You can change colors by changing values in `src/colorScheme.css`.
+- Edit variable `boxes` in `src/scripts.js` to hide or edit information boxes of your CV.
   In the same file, you can change all icons by setting different Font Awesome classes `settings` variable.
   For a list of Font Awesome icons' classes, visit [fontawesome.com/icons](https://fontawesome.com/icons).
