@@ -207,36 +207,47 @@
 
 
     /////////////////// Projects ///////////////////////////////////////////////
-    function createProjectsBox(projects) {
+    function createProjectsBox(featureDefinitions, projects) {
         const instance = cloneTemplateContent('#templateProjects');
         const anchor = instance.querySelector('.anchorProjects');
 
         for (let i = 0; i < projects.length; i++) {
-            const tmp = createProjectItem.apply(null, [i].concat(projects[i]));
+            const args = (featureDefinitions ? [featureDefinitions] : [])
+                .concat(i)
+                .concat(projects[i])
+
+            const tmp = createProjectItem.apply(null, args);
             anchor.appendChild(tmp);
         }
 
         return instance;
     }
 
-    function createProjectItem(itemIndex, name, url, description, technologyUsed, notableMetrics) {
+    //function createProjectFeature(featureDefinitions, iconClass, name, content) {
+    function createProjectFeature(featureDefinition, content) {
+        const instance = cloneTemplateContent('#templateProjectFeature')
+
+        instance.querySelector('.icon').className += ' ' + featureDefinition.icon
+        instance.querySelector('.featureName').innerText += ' ' + featureDefinition.name
+        instance.querySelector('.content').innerHTML = content
+
+        return instance
+    }
+
+    function createProjectItem(featureDefinitions, itemIndex, name, url, description, features) {
         const instance = cloneTemplateContent('#templateProjectItem');
+        const featuresContainer = instance.querySelector('.featuresContainer')
 
         createTitleLink(instance.querySelector('.name'), name, url);
         instance.querySelector('.iconText').textContent = '#' + (itemIndex + 1);
         instance.querySelector('.description').innerHTML = description;
 
-        const conditionalContent = (selectorContainer, selectorContent, text) => {
-            const container = instance.querySelector(selectorContainer)
-            if (!text) {
-                container.style.display = 'none'
-                return
-            }
-            container.querySelector(selectorContent).innerHTML = text
-        }
+        const ensuredFeatures = features || []
+        ensuredFeatures.forEach((item, index) => {
+            const featureBox = createProjectFeature.call(null, featureDefinitions[index], item)
 
-        conditionalContent('.technologyUsed', '.content', technologyUsed)
-        conditionalContent('.notableMetrics', '.content', notableMetrics)
+            featuresContainer.appendChild(featureBox)
+        })
 
         return instance;
     }

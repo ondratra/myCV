@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const boxes = [
         ['About me', myCv.createAboutMeContent(dataset.freeText.aboutMe)],
         ['Professions', myCv.createProfessionsContent(dataset.professionsI, dataset.professionsII)],
-        ['Mentionable projects', myCv.createProjectsBox(dataset.projects)],
+        ['Mentionable projects', myCv.createProjectsBox(dataset.projectFeatures, dataset.projects)],
         ['Work Experience', myCv.createWorkExperienceBox(dataset.workExperiences)],
         ['Skills', myCv.createSkillsContent(dataset.skills, dataset.knowledgeLevelDescriptions)],
         ['Languages', myCv.createLanguagesContent(dataset.languages, dataset.languageLevelDescriptions)],

@@ -67,19 +67,32 @@ window.myCvDataset = {
             'Proin non mauris nec ligula sodales ornare ac in ante. Pellentesque pharetra leo viverra purus vulputate, quis tristique tortor lobortis. Integer eget quam id orci tempus rhoncus. Pellentesque semper erat in felis molestie, cursus faucibus metus pretium. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
         ],
     ],
+    projectFeatures: [
+        {
+            icon: 'fas fa-wrench',
+            name: 'Technologies used',
+        }, {
+            icon: 'fas fa-chart-line',
+            name: 'Notable metrics',
+        },
+    ],
     projects: [
         [
             'The Project One',
             'https://theprojectone.cz',
             'Aliquam sed justo vel felis mattis laoreet vitae ac dolor. Quisque tortor leo, porta vitae nulla ornare, laoreet tincidunt diam. Aenean viverra nulla eu tortor faucibus, sit amet tincidunt erat malesuada. Quisque fermentum nulla sit amet augue lacinia consectetur. Curabitur congue neque nec enim tincidunt venenatis nec a magna.',
-            'PHP, MySQL, Nginx',
-            'Over a million lines of code.',
+            [
+                'PHP, MySQL, Nginx',
+                'Over a million lines of code.',
+            ],
         ], [
             'The Project Two',
             'https://theprojecttwo.cz',
             'Pellentesque feugiat elit in lectus placerat ornare. Ut laoreet ultricies ipsum. Nullam ut aliquet elit. Fusce scelerisque dignissim erat, eget mattis erat gravida ut. Aliquam neque metus, vulputate vitae justo vitae, sagittis ultrices purus. Ut lacinia diam vitae ligula sagittis, eu fringilla orci auctor.',
-            '',
-            'Over a million lines of code.',
+            [
+                '',
+                'Over a million lines of code.',
+            ],
         ],
     ],
     hobbies: [
