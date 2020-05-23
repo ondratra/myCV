@@ -210,6 +210,11 @@ hr {
     color: var(--color-quaternary);
 }
 
+.infoBox .projectItem .icon {
+    width: 16px;
+    text-align: center;
+}
+
 
 /****************** Profile sidebar *******************************************/
 .profile {

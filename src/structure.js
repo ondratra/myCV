@@ -223,12 +223,11 @@
         return instance;
     }
 
-    //function createProjectFeature(featureDefinitions, iconClass, name, content) {
     function createProjectFeature(featureDefinition, content) {
         const instance = cloneTemplateContent('#templateProjectFeature')
 
         instance.querySelector('.icon').className += ' ' + featureDefinition.icon
-        instance.querySelector('.featureName').innerText += ' ' + featureDefinition.name
+        instance.querySelector('.featureName').innerText += featureDefinition.name + ':'
         instance.querySelector('.content').innerHTML = content
 
         return instance
@@ -244,6 +243,10 @@
 
         const ensuredFeatures = features || []
         ensuredFeatures.forEach((item, index) => {
+            if (!item) {
+                return
+            }
+
             const featureBox = createProjectFeature.call(null, featureDefinitions[index], item)
 
             featuresContainer.appendChild(featureBox)
