@@ -43,6 +43,21 @@ window.myCvDataset = {
         ['GNU/Linux', 2],
         ['PHP', 3],
     ],
+    skills: [
+        [
+            'Blockchain-related',
+            [
+                ['Bitcoin', 1],
+                ['Ethereum', 2],
+            ]
+        ], [
+            'Others',
+            [
+                ['GNU/Linux', 3],
+                ['PHP', 4],
+            ]
+        ],
+    ],
     languages: [
         ['Czech', 0],
         ['English', 1],

@@ -67,7 +67,7 @@ hr {
     margin-left: 4px;
 }
 
-.infoBox .title {
+.infoBox > .title {
     display: inline-block;
     height: 56px;
     line-height: 56px;
@@ -114,6 +114,15 @@ hr {
     display: inline-block;
     float: left;
     font-size: 14px;
+}
+
+.infoBox .anchorSkillSections .title {
+    text-decoration: underline;
+    color: var(--color-secondary);
+    margin: 0px 0px 15px 0px;
+    padding: 5px 15px;
+    background-color: var(--color-quaternary-transparent);
+    border-radius: 15px;
 }
 
 .infoBox .knowledgeItem .name {

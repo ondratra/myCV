@@ -145,10 +145,21 @@
     }
 
     /////////////////// Skills & Languages /////////////////////////////////////
-    function createSkillsContent(skills, knowledgeDescriptions) {
+    function createSkillsContent(skillSections, knowledgeDescriptions) {
         const instance = cloneTemplateContent('#templateSkills');
-        const anchor = instance.querySelector('.anchorSkills');
-        createSkillOrLanguageContent(anchor, skills, knowledgeDescriptions);
+        const anchor = instance.querySelector('.anchorSkillSections');
+
+        for (let i = 0; i < skillSections.length; i++) {
+            const sectionInstance = cloneTemplateContent('#templateSkillsSection');
+
+            const sectionSkillsAnchor = sectionInstance.querySelector('.anchorSkills');
+            const title = sectionInstance.querySelector('.title');
+            title.innerText = skillSections[i][0]
+
+            createSkillOrLanguageContent(sectionSkillsAnchor, skillSections[i][1], knowledgeDescriptions);
+
+            anchor.appendChild(sectionInstance)
+        }
 
         return instance;
     }
