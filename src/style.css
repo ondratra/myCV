@@ -67,7 +67,8 @@ hr {
     margin-left: 4px;
 }
 
-.infoBox > .title {
+.infoBox > .title,
+.infoBox .anchorInfoContent > .title {
     display: inline-block;
     height: 56px;
     line-height: 56px;
@@ -117,11 +118,10 @@ hr {
 }
 
 .infoBox .anchorSkillSections .title {
-    text-decoration: underline;
-    color: var(--color-secondary);
+    color: var(--color-primary);
     margin: 0px 0px 15px 0px;
     padding: 5px 15px;
-    background-color: var(--color-quaternary-transparent);
+    background-color: var(--color-tertiary);
     border-radius: 15px;
 }
 
