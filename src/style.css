@@ -9,6 +9,7 @@
 
 html, body {
     font-family: 'myCvFont';
+    margin: 0px;
 }
 
 hr {
@@ -46,7 +47,6 @@ hr {
     float: left;
     clear: right;
 }
-
 
 /****************** Content boxes *********************************************/
 .infoBox {
@@ -179,6 +179,7 @@ hr {
 .infoBox .knowledgeItem .skillContent {
     display: inline-block;
     width: 240px;
+    max-width: calc(100% - 70px);
     margin-left: 14px;
     vertical-align: top;
 }
@@ -253,8 +254,15 @@ hr {
     opacity: 1;
 }
 
+.profile .profileSummaryContainer {
+    background-color: var(--color-primary);
+    padding: 15px 0;
+    margin-top: 29px;
+    border-radius: 20px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 15%), 0 1px 2px rgb(0 0 0 / 15%);
+}
+
 .profile .name {
-    margin-top: 30px;
     font-weight: bold;
     font-size: 16px;
 }
@@ -298,6 +306,58 @@ hr {
 
 .forkMeRibbon img {
     display: block;
+}
+
+
+/****************** Responsivness *********************************************/
+@media (max-width: 1024px) {
+    .omniContainer {
+        width: 710px;
+    }
+
+    .leftColumn,
+    .rightColumn {
+        float: none;
+        position: relative;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .leftColumn {
+        width: 710px;
+        margin-bottom: 20px;
+        padding-right: 0px;
+    }
+
+    .leftColumn.profile .profileSummaryContainer {
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .omniContainer,
+    .leftColumn,
+    .rightColumn {
+        width: 480px;
+    }
+
+    .infoBox .knowledgeItem {
+        width: 100%;
+    }
+
+    .infoBox .knowledgeItem .skillContent {
+        width: calc(100% - 70px);
+    }
+}
+
+@media (max-width: 520px) {
+    .omniContainer,
+    .leftColumn,
+    .rightColumn {
+        width: 360px;
+    }
 }
 
 
