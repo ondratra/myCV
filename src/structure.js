@@ -69,7 +69,7 @@
 
 
     /////////////////// Profile ////////////////////////////////////////////////
-    function initProfile(locationIcon, name, portrait, location, motto, email, socials) {
+    function initProfile(locationIcon, timezoneIcon, name, portrait, location, timezone, motto, email, socials) {
         const container = document.querySelector('.leftColumn.profile');
 
         // misc
@@ -77,6 +77,8 @@
         container.querySelector('.personalImageContainer img').src = portrait;
         container.querySelector('.location .iconAnchor').appendChild(createIcon(locationIcon));
         container.querySelector('.location .text').textContent = location;
+        container.querySelector('.timezone .iconAnchor').appendChild(createIcon(timezoneIcon));
+        container.querySelector('.timezone .text').textContent = timezone;
         container.querySelector('.motto').textContent = motto;
 
         // email
@@ -244,13 +246,19 @@
         return instance
     }
 
-    function createProjectItem(featureDefinitions, itemIndex, name, url, description, features) {
+    function createProjectItem(featureDefinitions, itemIndex, name, url, duration, description, features) {
         const instance = cloneTemplateContent('#templateProjectItem');
         const featuresContainer = instance.querySelector('.featuresContainer')
 
         createTitleLink(instance.querySelector('.name'), name, url);
         instance.querySelector('.iconText').textContent = '#' + (itemIndex + 1);
         instance.querySelector('.description').innerHTML = description;
+        if (duration) {
+            instance.querySelector('.yearInterval').innerHTML = duration;
+        } else {
+            instance.querySelector('.duration').style.display = 'none';
+        }
+
 
         const ensuredFeatures = features || []
         ensuredFeatures.forEach((item, index) => {

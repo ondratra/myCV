@@ -4,6 +4,7 @@ window.myCvDataset = {
     portrait: 'data/portrait.example.svg',
     contacts: {
         location: 'Berlin, DE',
+        timezone: 'CET +0',
         email: 'dummyemail@fake.tmp',
         socials: [
             ['github.com/dummyPerson', 'https://github.com/dummyPerson']
@@ -67,17 +68,20 @@ window.myCvDataset = {
         [
             'Freelance',
             null,
+            null,
             '2009 - Today',
             'Software consultant',
             'Maecenas eget est eu eros commodo tincidunt vitae sit amet diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus justo turpis, feugiat a molestie sed, scelerisque sed enim.'
         ], [
             'The Company One',
+            '2015 - 2017',
             'https://thecompanyone.tmp',
             '2007 - 2009', 'Product manager',
             'Vivamus viverra dapibus ex ullamcorper hendrerit. Nam at pulvinar lorem. Ut eget varius leo. Cras in est maximus, scelerisque enim quis, finibus massa.'
         ], [
             'The Company Two',
             'https://thecompanytwo.tmp',
+            '2010 - 2015',
             '2005 - 2007', 'Software developer',
             'Proin non mauris nec ligula sodales ornare ac in ante. Pellentesque pharetra leo viverra purus vulputate, quis tristique tortor lobortis. Integer eget quam id orci tempus rhoncus. Pellentesque semper erat in felis molestie, cursus faucibus metus pretium. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
         ],

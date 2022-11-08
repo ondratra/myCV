@@ -209,11 +209,14 @@ hr {
 }
 
 .infoBox .workExperienceItem .name,
-.infoBox .workExperienceItem .duration {
+.infoBox .workExperienceItem .duration,
+.infoBox .projectItem .name,
+.infoBox .projectItem .duration {
     display: inline-block;
 }
 
-.infoBox .workExperienceItem .duration {
+.infoBox .workExperienceItem .duration,
+.infoBox .projectItem .duration {
     font-size: 16px;
     color: var(--color-quaternary);
 }
@@ -265,17 +268,25 @@ hr {
     font-size: 16px;
 }
 
-.profile .location {
+.profile .geoContainer {
     margin-top: 10px;
+    display: inline-block;
+    text-align: left;
 }
 
-.profile .location .iconAnchor {
+.profile .geoContainer .iconAnchor {
     margin-right: 4px;
     font-size: 18px;
 }
 
+.profile .geoContainer .timezone .iconAnchor {
+    margin-left: 2px;
+}
+
 .profile .location .iconAnchor,
-.profile .location .text {
+.profile .location .text,
+.profile .timezone .iconAnchor,
+.profile .timezone .text {
     display: inline-block;
     vertical-align: middle;
 }
