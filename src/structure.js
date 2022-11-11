@@ -75,9 +75,9 @@
         // misc
         container.querySelector('.name').textContent = name;
         container.querySelector('.personalImageContainer img').src = portrait;
-        container.querySelector('.location .iconAnchor').appendChild(createIcon(locationIcon));
+        container.querySelector('.location .iconAnchor').appendChild(createIcon(locationIcon + ' fa-fw'));
         container.querySelector('.location .text').textContent = location;
-        container.querySelector('.timezone .iconAnchor').appendChild(createIcon(timezoneIcon));
+        container.querySelector('.timezone .iconAnchor').appendChild(createIcon(timezoneIcon + ' fa-fw'));
         container.querySelector('.timezone .text').textContent = timezone;
         container.querySelector('.motto').textContent = motto;
 
@@ -88,14 +88,18 @@
 
         // socials
         const socialsContainer = container.querySelector('.anchorSocials');
-        const socialsString = socials.forEach((item) => {
-            const link = document.createElement('a');
-            link.href = item[1];
-            link.textContent = item[0];
-            link.target = '_blank';
-            link.rel = 'nofollow'
+        const socialsString = socials.forEach(([name, link, icon]) => {
+            const instance = cloneTemplateContent('#templateSocialLink');
+            const linkInstance = instance.querySelector('.socialLink')
 
-            return socialsContainer.appendChild(link);
+            linkInstance.href = link;
+            linkInstance.textContent = name;
+
+            const iconInstance = instance.querySelector('.icon')
+
+            iconInstance.className = (icon || 'fas icon-invisible') + ' fa-fw';
+
+            return socialsContainer.appendChild(instance);
         });
     }
 
@@ -104,7 +108,7 @@
     function createAboutMeContent(aboutMe) {
         const instance = cloneTemplateContent('#templateAboutMe');
 
-        let content = aboutMe
+        const content = aboutMe
             .trim()
             .split('\n\n')
             .map(item => `<p>${item}</p>`)

@@ -7,7 +7,7 @@ window.myCvDataset = {
         timezone: 'CET +0',
         email: 'dummyemail@fake.tmp',
         socials: [
-            ['github.com/dummyPerson', 'https://github.com/dummyPerson']
+            ['github.com/dummyPerson', 'https://github.com/dummyPerson', 'fab fa-github']
         ]
     },
     freeText: {
