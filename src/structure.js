@@ -1,112 +1,112 @@
 (function () {
     if (!('content' in document.createElement('template'))) {
-        alert('Your prehistoric version of web browser doesn\'t support this page :(');
-        return;
+        alert('Your prehistoric version of web browser doesn\'t support this page :(')
+        return
     }
 
     /////////////////// Generic ////////////////////////////////////////////////
 
     function cloneTemplateContent(templateSelector) {
-        const template = document.querySelector(templateSelector);
-        const instance = document.importNode(template.content, true);
+        const template = document.querySelector(templateSelector)
+        const instance = document.importNode(template.content, true)
 
-        return instance;
+        return instance
     }
 
     function createInfoBox(icon, title, htmlContent) {
-        const infoBox = cloneTemplateContent('#templateInfoBox');
+        const infoBox = cloneTemplateContent('#templateInfoBox')
 
-        infoBox.querySelector('.title').textContent = title;
-        infoBox.querySelector('.anchorInfoContent').appendChild(htmlContent);
-        infoBox.querySelector('.iconAnchor').appendChild(createIcon(icon));
+        infoBox.querySelector('.title').textContent = title
+        infoBox.querySelector('.anchorInfoContent').appendChild(htmlContent)
+        infoBox.querySelector('.iconAnchor').appendChild(createIcon(icon))
 
-        return infoBox;
+        return infoBox
     }
 
     function createIcon(icon) {
-        const iconElement = document.createElement('i');
-        iconElement.className = icon;
+        const iconElement = document.createElement('i')
+        iconElement.className = icon
 
-        return iconElement;
+        return iconElement
     }
 
     function createTitleLink(container, name, url) {
         if (!url) {
-            container.textContent = name;
-            return;
+            container.textContent = name
+            return
         }
 
-        const title = document.createElement('a');
-        title.href = url;
-        title.textContent = name;
-        title.target = '_blank';
+        const title = document.createElement('a')
+        title.href = url
+        title.textContent = name
+        title.target = '_blank'
         title.rel = 'nofollow'
-        container.appendChild(title);
+        container.appendChild(title)
     }
 
     function initPage(title) {
-        document.querySelector('.webPageTitle').textContent = title;
+        document.querySelector('.webPageTitle').textContent = title
     }
 
     function initStructure(boxes, icons) {
         const camelizeString = (str) => {
             return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(letter, index) {
-                return index == 0 ? letter.toLowerCase() : letter.toUpperCase();
-            }).replace(/\s+/g, '');
-        };
+                return index == 0 ? letter.toLowerCase() : letter.toUpperCase()
+            }).replace(/\s+/g, '')
+        }
 
-        const anchor = document.querySelector('.anchorInfoBox');
+        const anchor = document.querySelector('.anchorInfoBox')
         for (let i = 0; i < boxes.length; i++) {
             // select icon
-            const name = camelizeString(boxes[i][0]);
-            const icon = icons[name];
+            const name = camelizeString(boxes[i][0])
+            const icon = icons[name]
 
             // create box
-            const infoBox = createInfoBox.apply(null, [icon].concat(boxes[i]));
-            anchor.appendChild(infoBox);
+            const infoBox = createInfoBox.apply(null, [icon].concat(boxes[i]))
+            anchor.appendChild(infoBox)
         }
     }
 
 
     /////////////////// Profile ////////////////////////////////////////////////
     function initProfile(locationIcon, timezoneIcon, name, portrait, location, timezone, motto, email, socials) {
-        const container = document.querySelector('.leftColumn.profile');
+        const container = document.querySelector('.leftColumn.profile')
 
         // misc
-        container.querySelector('.name').textContent = name;
-        container.querySelector('.personalImageContainer img').src = portrait;
-        container.querySelector('.location .iconAnchor').appendChild(createIcon(locationIcon + ' fa-fw'));
-        container.querySelector('.location .text').textContent = location;
-        container.querySelector('.timezone .iconAnchor').appendChild(createIcon(timezoneIcon + ' fa-fw'));
-        container.querySelector('.timezone .text').textContent = timezone;
-        container.querySelector('.motto').textContent = motto;
+        container.querySelector('.name').textContent = name
+        container.querySelector('.personalImageContainer img').src = portrait
+        container.querySelector('.location .iconAnchor').appendChild(createIcon(locationIcon + ' fa-fw'))
+        container.querySelector('.location .text').textContent = location
+        container.querySelector('.timezone .iconAnchor').appendChild(createIcon(timezoneIcon + ' fa-fw'))
+        container.querySelector('.timezone .text').textContent = timezone
+        container.querySelector('.motto').textContent = motto
 
         // email
-        const emailLink = container.querySelector('.email .mailtoLink');
-        emailLink.href = 'mailto:' + email;
-        emailLink.textContent = email;
+        const emailLink = container.querySelector('.email .mailtoLink')
+        emailLink.href = 'mailto:' + email
+        emailLink.textContent = email
 
         // socials
-        const socialsContainer = container.querySelector('.anchorSocials');
+        const socialsContainer = container.querySelector('.anchorSocials')
         const socialsString = socials.forEach(([name, link, icon]) => {
-            const instance = cloneTemplateContent('#templateSocialLink');
+            const instance = cloneTemplateContent('#templateSocialLink')
             const linkInstance = instance.querySelector('.socialLink')
 
-            linkInstance.href = link;
-            linkInstance.textContent = name;
+            linkInstance.href = link
+            linkInstance.textContent = name
 
             const iconInstance = instance.querySelector('.icon')
 
-            iconInstance.className = (icon || 'fas icon-invisible') + ' fa-fw';
+            iconInstance.className = (icon || 'fas icon-invisible') + ' fa-fw'
 
-            return socialsContainer.appendChild(instance);
-        });
+            return socialsContainer.appendChild(instance)
+        })
     }
 
 
     /////////////////// About me ///////////////////////////////////////////////
     function createAboutMeContent(aboutMe) {
-        const instance = cloneTemplateContent('#templateAboutMe');
+        const instance = cloneTemplateContent('#templateAboutMe')
 
         const content = aboutMe
             .trim()
@@ -114,130 +114,130 @@
             .map(item => `<p>${item}</p>`)
             .join('')
 
-        instance.querySelector('.aboutMe').innerHTML = content;
+        instance.querySelector('.aboutMe').innerHTML = content
 
-        return instance;
+        return instance
     }
 
 
     /////////////////// Professions ////////////////////////////////////////////
     function createProfessionsContent(professionsI, professionsII) {
-        const instance = cloneTemplateContent('#templateProfessions');
+        const instance = cloneTemplateContent('#templateProfessions')
 
         // first profession layer
-        const anchorProfessionsI = instance.querySelector('.anchorProfessionsI');
+        const anchorProfessionsI = instance.querySelector('.anchorProfessionsI')
         for (let i = 0; i < professionsI.length; i++) {
-            const tmp = createProfessionItem.apply(null, professionsI[i]);
-            anchorProfessionsI.appendChild(tmp);
+            const tmp = createProfessionItem.apply(null, professionsI[i])
+            anchorProfessionsI.appendChild(tmp)
         }
 
         // second profession layer
-        const anchorProfessionsII = instance.querySelector('.anchorProfessionsII');
+        const anchorProfessionsII = instance.querySelector('.anchorProfessionsII')
         for (let i = 0; i < professionsII.length; i++) {
-            const tmp = createProfessionItem.apply(null, professionsII[i]);
-            anchorProfessionsII.appendChild(tmp);
+            const tmp = createProfessionItem.apply(null, professionsII[i])
+            anchorProfessionsII.appendChild(tmp)
         }
 
-        return instance;
+        return instance
     }
 
     function createProfessionItem(name, yearCount) {
-        const instance = cloneTemplateContent('#templateProfessionItem');
+        const instance = cloneTemplateContent('#templateProfessionItem')
 
-        instance.querySelector('.yearCount').textContent = yearCount;
-        instance.querySelector('.name').textContent = name;
+        instance.querySelector('.yearCount').textContent = yearCount
+        instance.querySelector('.name').textContent = name
 
-        return instance;
+        return instance
     }
 
     /////////////////// Skills & Languages /////////////////////////////////////
     function createSkillsContent(skillSections, knowledgeDescriptions) {
-        const instance = cloneTemplateContent('#templateSkills');
-        const anchor = instance.querySelector('.anchorSkillSections');
+        const instance = cloneTemplateContent('#templateSkills')
+        const anchor = instance.querySelector('.anchorSkillSections')
 
         for (let i = 0; i < skillSections.length; i++) {
-            const sectionInstance = cloneTemplateContent('#templateSkillsSection');
+            const sectionInstance = cloneTemplateContent('#templateSkillsSection')
 
-            const sectionSkillsAnchor = sectionInstance.querySelector('.anchorSkills');
-            const title = sectionInstance.querySelector('.title');
+            const sectionSkillsAnchor = sectionInstance.querySelector('.anchorSkills')
+            const title = sectionInstance.querySelector('.title')
             title.innerText = skillSections[i][0]
 
-            createSkillOrLanguageContent(sectionSkillsAnchor, skillSections[i][1], knowledgeDescriptions);
+            createSkillOrLanguageContent(sectionSkillsAnchor, skillSections[i][1], knowledgeDescriptions)
 
             anchor.appendChild(sectionInstance)
         }
 
-        return instance;
+        return instance
     }
 
     function createLanguagesContent(languages, knowledgeDescriptions) {
-        const instance = cloneTemplateContent('#templateLanguages');
-        const anchor = instance.querySelector('.anchorLanguages');
-        createSkillOrLanguageContent(anchor, languages, knowledgeDescriptions);
+        const instance = cloneTemplateContent('#templateLanguages')
+        const anchor = instance.querySelector('.anchorLanguages')
+        createSkillOrLanguageContent(anchor, languages, knowledgeDescriptions)
 
-        return instance;
+        return instance
     }
 
     function createSkillOrLanguageContent(anchor, knowledgeData, knowledgeDescriptions) {
         for (let i = 0; i < knowledgeData.length; i++) {
-            const tmp = createKnowledgeItem.apply(null, knowledgeData[i].concat([knowledgeDescriptions]));
-            anchor.appendChild(tmp);
+            const tmp = createKnowledgeItem.apply(null, knowledgeData[i].concat([knowledgeDescriptions]))
+            anchor.appendChild(tmp)
         }
     }
 
     function createKnowledgeItem(name, levelDescription, knowledgeDescriptions) {
-        const instance = cloneTemplateContent('#templateKnowledgeItem');
+        const instance = cloneTemplateContent('#templateKnowledgeItem')
 
-        instance.querySelector('.iconText').textContent = name.charAt(0);
-        instance.querySelector('.name').textContent = name;
+        instance.querySelector('.iconText').textContent = name.charAt(0)
+        instance.querySelector('.name').textContent = name
         instance.querySelector('.dotOuter').style.left = (levelDescription * 32) + '%'; // slider position
-        instance.querySelector('.levelText').textContent = knowledgeDescriptions[levelDescription];
+        instance.querySelector('.levelText').textContent = knowledgeDescriptions[levelDescription]
 
-        return instance;
+        return instance
     }
 
 
     /////////////////// Work Experiences ///////////////////////////////////////
     function createWorkExperienceBox(workExperiences) {
-        const instance = cloneTemplateContent('#templateWorkExperiences');
-        const anchor = instance.querySelector('.anchorWorkExperiences');
+        const instance = cloneTemplateContent('#templateWorkExperiences')
+        const anchor = instance.querySelector('.anchorWorkExperiences')
 
         for (let i = 0; i < workExperiences.length; i++) {
-            const tmp = createWorkExperienceItem.apply(null, workExperiences[i].concat([i]));
-            anchor.appendChild(tmp);
+            const tmp = createWorkExperienceItem.apply(null, workExperiences[i].concat([i]))
+            anchor.appendChild(tmp)
         }
 
-        return instance;
+        return instance
     }
 
     function createWorkExperienceItem(name, url, duration, position, description, itemIndex) {
-        const instance = cloneTemplateContent('#templateWorkExperienceItem');
+        const instance = cloneTemplateContent('#templateWorkExperienceItem')
 
-        createTitleLink(instance.querySelector('.name'), name, url);
-        instance.querySelector('.iconText').textContent = '#' + (itemIndex + 1);
-        instance.querySelector('.yearInterval').textContent = duration;
-        instance.querySelector('.position').textContent = position;
-        instance.querySelector('.description').innerHTML = description;
+        createTitleLink(instance.querySelector('.name'), name, url)
+        instance.querySelector('.iconText').textContent = '#' + (itemIndex + 1)
+        instance.querySelector('.yearInterval').textContent = duration
+        instance.querySelector('.position').textContent = position
+        instance.querySelector('.description').innerHTML = description
 
-        return instance;
+        return instance
     }
 
 
     /////////////////// Projects ///////////////////////////////////////////////
     function createProjectsBox(featureDefinitions, projects) {
-        const instance = cloneTemplateContent('#templateProjects');
-        const anchor = instance.querySelector('.anchorProjects');
+        const instance = cloneTemplateContent('#templateProjects')
+        const anchor = instance.querySelector('.anchorProjects')
 
         for (let i = 0; i < projects.length; i++) {
             const args = (featureDefinitions ? [featureDefinitions] : [])
                 .concat(i)
                 .concat(projects[i])
 
-            const tmp = createProjectItem.apply(null, args);
-            anchor.appendChild(tmp);
+            const tmp = createProjectItem.apply(null, args)
+            anchor.appendChild(tmp)
         }
 
-        return instance;
+        return instance
     }
 
     function createProjectFeature(featureDefinition, content) {
@@ -251,16 +251,16 @@
     }
 
     function createProjectItem(featureDefinitions, itemIndex, name, url, duration, description, features) {
-        const instance = cloneTemplateContent('#templateProjectItem');
+        const instance = cloneTemplateContent('#templateProjectItem')
         const featuresContainer = instance.querySelector('.featuresContainer')
 
-        createTitleLink(instance.querySelector('.name'), name, url);
-        instance.querySelector('.iconText').textContent = '#' + (itemIndex + 1);
-        instance.querySelector('.description').innerHTML = description;
+        createTitleLink(instance.querySelector('.name'), name, url)
+        instance.querySelector('.iconText').textContent = '#' + (itemIndex + 1)
+        instance.querySelector('.description').innerHTML = description
         if (duration) {
-            instance.querySelector('.yearInterval').innerHTML = duration;
+            instance.querySelector('.yearInterval').innerHTML = duration
         } else {
-            instance.querySelector('.duration').style.display = 'none';
+            instance.querySelector('.duration').style.display = 'none'
         }
 
 
@@ -275,37 +275,37 @@
             featuresContainer.appendChild(featureBox)
         })
 
-        return instance;
+        return instance
     }
 
 
     /////////////////// Hobbies ////////////////////////////////////////////////
     function createHobbiesBox(hobbies, books, bookSectionName, bookIcon) {
-        const instance = cloneTemplateContent('#templateHobbies');
+        const instance = cloneTemplateContent('#templateHobbies')
 
         // hobbies
-        const hobbyAnchor = instance.querySelector('.anchorHobbies');
+        const hobbyAnchor = instance.querySelector('.anchorHobbies')
         hobbies.forEach((item) => {
-            hobbyAnchor.appendChild(createHobbyItem(item));
-        });
+            hobbyAnchor.appendChild(createHobbyItem(item))
+        })
 
         // books
-        const bookAnchor = instance.querySelector('.anchorBooks');
+        const bookAnchor = instance.querySelector('.anchorBooks')
         books.forEach((item) => {
-            bookAnchor.appendChild(createHobbyItem(item));
-        });
-        instance.querySelector('.booksTitle').textContent = bookSectionName;
-        instance.querySelector('.booksIcon').appendChild(createIcon(bookIcon));
+            bookAnchor.appendChild(createHobbyItem(item))
+        })
+        instance.querySelector('.booksTitle').textContent = bookSectionName
+        instance.querySelector('.booksIcon').appendChild(createIcon(bookIcon))
 
-        return instance;
+        return instance
     }
 
     function createHobbyItem(name) {
-        const instance = cloneTemplateContent('#templateHobbyItem');
+        const instance = cloneTemplateContent('#templateHobbyItem')
 
-        instance.querySelector('.name').textContent = name;
+        instance.querySelector('.name').textContent = name
 
-        return instance;
+        return instance
     }
 
 
@@ -322,5 +322,5 @@
         createWorkExperienceBox,
         createProjectsBox,
         createHobbiesBox,
-    };
-})();
+    }
+})()

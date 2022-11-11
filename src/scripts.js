@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    const dataset = window.myCvDataset;
-    const myCv = window.myCv;
+    const dataset = window.myCvDataset
+    const myCv = window.myCv
 
     const boxes = [
         ['About me', myCv.createAboutMeContent(dataset.freeText.aboutMe)],
@@ -30,10 +30,10 @@ document.addEventListener("DOMContentLoaded", function() {
         ['Skills', myCv.createSkillsContent(dataset.skills, dataset.knowledgeLevelDescriptions)],
         ['Languages', myCv.createLanguagesContent(dataset.languages, dataset.languageLevelDescriptions)],
         ['Hobbies', myCv.createHobbiesBox(dataset.hobbies, dataset.books, 'Books', settings.icons.books)]
-    ];
+    ]
 
     // display CV content
-    myCv.initPage(dataset.webPageTitle);
+    myCv.initPage(dataset.webPageTitle)
     myCv.initProfile(
         settings.icons.location,
         settings.icons.timezone,
@@ -44,6 +44,6 @@ document.addEventListener("DOMContentLoaded", function() {
         dataset.freeText.motto,
         dataset.contacts.email,
         dataset.contacts.socials
-    );
-    myCv.initStructure(boxes, settings.icons);
-});
+    )
+    myCv.initStructure(boxes, settings.icons)
+})

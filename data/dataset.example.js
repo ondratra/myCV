@@ -121,4 +121,4 @@ window.myCvDataset = {
     books: [
         'favoriteBook1', 'favoriteBook2'
     ]
-};
+}
