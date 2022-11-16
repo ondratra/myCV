@@ -48,6 +48,10 @@ hr {
     clear: right;
 }
 
+.rightColumn p {
+    text-align: justify;
+}
+
 .icon-invisible {
     visibility: hidden;
 }
@@ -225,6 +229,11 @@ hr {
     color: var(--color-quaternary);
 }
 
+.infoBox .projectItem:not(:last-child) {
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--color-quinary);
+}
+
 .infoBox .projectItem .icon {
     width: 16px;
     text-align: center;
@@ -365,6 +374,10 @@ hr {
     .leftColumn,
     .rightColumn {
         width: 360px;
+    }
+
+    .rightColumn p {
+        text-align: initial;
     }
 }
 
