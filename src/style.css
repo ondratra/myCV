@@ -384,6 +384,14 @@ hr {
 
 /****************** Print *****************************************************/
 @media print {
+    .omniContainer, .rightColumn {
+        width: auto;
+    }
+
+    .leftColumn {
+        width: 50%;
+    }
+
     .forkMeRibbon {
         display: none;
     }
