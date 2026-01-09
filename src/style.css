@@ -239,6 +239,36 @@ hr {
     text-align: center;
 }
 
+.infoBox .workExperienceItem:nth-child(n+4),
+.infoBox .projectItem:nth-child(n+4) {
+    display: none;
+}
+
+.infoBox .expandButton {
+    color: white;
+    background: var(--color-tertiary);
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    width: 50%;
+    margin: 0px auto;
+}
+
+.infoBox .expandButton:hover {
+    filter: brightness(1.3);
+    background: purple;
+}
+
+.infoBox .expanded.expandButton {
+    display: none;
+}
+
+.infoBox .expanded .workExperienceItem:nth-child(n+4),
+.infoBox .expanded .projectItem:nth-child(n+4) {
+    display: block;
+}
 
 /****************** Profile sidebar *******************************************/
 .profile {
@@ -399,5 +429,14 @@ hr {
     .backgroundColor4 {
         border: 1px solid var(--color-tertiary);
         color: var(--color-tertiary);
+    }
+
+    .infoBox .expandButton {
+        display: none;
+    }
+
+    .infoBox .workExperienceItem:nth-child(n+4),
+    .infoBox .projectItem:nth-child(n+4) {
+        display: block;
     }
 }

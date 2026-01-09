@@ -201,10 +201,16 @@
     function createWorkExperienceBox(workExperiences) {
         const instance = cloneTemplateContent('#templateWorkExperiences')
         const anchor = instance.querySelector('.anchorWorkExperiences')
+        const expandButton = instance.querySelector('.expandButton')
 
         for (let i = 0; i < workExperiences.length; i++) {
             const tmp = createWorkExperienceItem.apply(null, workExperiences[i].concat([i]))
             anchor.appendChild(tmp)
+        }
+
+        expandButton.onclick = () => {
+            anchor.classList.add("expanded")
+            expandButton.classList.add("expanded")
         }
 
         return instance
@@ -227,6 +233,7 @@
     function createProjectsBox(featureDefinitions, projects) {
         const instance = cloneTemplateContent('#templateProjects')
         const anchor = instance.querySelector('.anchorProjects')
+        const expandButton = instance.querySelector('.expandButton')
 
         for (let i = 0; i < projects.length; i++) {
             const args = (featureDefinitions ? [featureDefinitions] : [])
@@ -235,6 +242,11 @@
 
             const tmp = createProjectItem.apply(null, args)
             anchor.appendChild(tmp)
+        }
+
+        expandButton.onclick = () => {
+            anchor.classList.add("expanded")
+            expandButton.classList.add("expanded")
         }
 
         return instance
